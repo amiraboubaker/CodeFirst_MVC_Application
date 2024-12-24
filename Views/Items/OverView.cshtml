@@ -5,6 +5,10 @@
 <head>
     <link rel="stylesheet" href="styles.css">
 </head>
-<p>This is the ID of the item : @Model.Id</p>
-<p>This is the name of the item : @Model.Name</p>
 
+<form asp-action="Submit">
+    <div>
+        <input asp-for="Name" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
