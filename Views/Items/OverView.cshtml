@@ -1,8 +1,15 @@
 ﻿@model MyApp.Models.Item
 @{
     ViewData["Title"] = "OverView Page";
+    var items = new List<string> { "Item1", "Item2", "Item3" };
 }
 <head>
     <link rel="stylesheet" href="styles.css">
 </head>
 <p>This is the name of the item @Model.Name</p>
+<ul>
+    @foreach (var item in items)
+    {
+        <li>@item</li>
+    }
+</ul>
