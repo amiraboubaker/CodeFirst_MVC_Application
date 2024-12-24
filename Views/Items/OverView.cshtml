@@ -1,18 +1,10 @@
 ﻿@model MyApp.Models.Item
 @{
     ViewData["Title"] = "OverView Page";
-    var items = new List<string> { "Item1", "Item2", "Item3" };
-    var isLoggedIn = true;
 }
 <head>
     <link rel="stylesheet" href="styles.css">
 </head>
-<p>This is the name of the item @Model.Name</p>
+<p>This is the ID of the item : @Model.Id</p>
+<p>This is the name of the item : @Model.Name</p>
 
-@if (isLoggedIn)
-{
-    <p>Welcome back!</p>
-}
-else{
-    <p>Please log in.</p>
-}
