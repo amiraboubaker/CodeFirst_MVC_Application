@@ -10,5 +10,9 @@ namespace MyApp.Controllers
             var item = new Item() { Name = "keyboard" };
             return View(item);
         }
+        public IActionResult Edit (int itemId)
+        {
+            return Content("id = " + itemId);
+        }
     }
 }
