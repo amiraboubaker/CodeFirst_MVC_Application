@@ -15,11 +15,22 @@ namespace MyApp.Controllers
         public async Task<IActionResult> Index()
         {
             var item = await _context.Items.ToListAsync();
-            return View();
+            return View(item);
         }
-        public IActionResult Create(int itemId)
+        public IActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("Id, Name, Price")] Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Items.Add(item);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("index");
+            }
+            return View(item);
         }
     }
 }
