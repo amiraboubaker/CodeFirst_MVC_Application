@@ -17,7 +17,7 @@ namespace MyApp.Controllers
             var item = await _context.Items.ToListAsync();
             return View();
         }
-        public IActionResult Create(int itemId)
+        public IActionResult Create()
         {
             return View();
         }
