@@ -15,7 +15,7 @@ namespace MyApp.Controllers
         public async Task<IActionResult> Index()
         {
             var item = await _context.Items.ToListAsync();
-            return View();
+            return View(item);
         }
         public IActionResult Create()
         {
